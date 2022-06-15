@@ -1,0 +1,148 @@
+const { defaultTheme } = require('@vuepress/theme-default')
+const { searchPlugin } = require('@vuepress/plugin-search')
+const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
+const { viteBundler } = require('vuepress')
+
+module.exports = {
+    base: '/',
+    host: '0.0.0.0',
+    port: '5555',
+    locales: {
+        '/': {
+            lang: 'zh-CN',
+            title: 'Sakura Bot',
+            description: '一个多功能的QQBot',
+        }
+    },
+    theme: defaultTheme({
+        logo: '/images/logo.png',
+        lastUpdated: true,
+        lastUpdatedText: '上次更新',
+        navbar: [
+            {
+                text: '使用',
+                link: '/start/'
+            },
+            {
+                text: '插件列表',
+                children: [
+                    {
+                        text: '基础插件',
+                        link: '/plugins/default.md'
+                    },
+                    {
+                        text: '音游插件',
+                        children: [
+                            '/plugins/rhythmgame/Arcaea.md',
+                            '/plugins/rhythmgame/osu!.md',
+                            '/plugins/rhythmgame/maimaiDX.md'
+                        ]
+                    },
+                    {
+                        text: '其它插件',
+                        children: [
+                            '/plugins/other/pcr.md',
+                            '/plugins/other/pcr_duel.md',
+                            '/plugins/other/genshen.md',
+                            '/plugins/other/setu.md',
+                            '/plugins/other/cdd.md',
+                            '/plugins/other/bandoristation.md',
+                            '/plugins/other/rss.md',
+                            '/plugins/other/minecraft.md',
+                            '/plugins/other/setuscore.md'
+                        ]
+                    }
+                ]
+            },
+            {
+                text: '推荐插件',
+                children: [
+                    '/plugins/rhythmgame/Arcaea/',
+                    '/plugins/rhythmgame/osu!/',
+                    '/plugins/rhythmgame/maimaiDX/'
+                ]
+            },
+            {
+                text: 'API',
+                children: [
+                    {
+                        text: 'API',
+                        children: [
+                            '/API/osu!.md',
+                            '/API/Arcaea.md'
+                        ]
+                    }
+                ]
+            },
+            {
+                text: '更新说明',
+                link: '/update.md'
+            },
+            {
+                text: 'Github',
+                link: 'https://github.com/Yuri-YuzuChaN'
+            }
+        ],
+        sidebar: {
+            '/start/': [
+                {
+                    text: '开始',
+                    link: '/start/'
+                }
+            ],
+            '/plugins/': [
+                {
+                    text: '基础插件',
+                    children: ['/plugins/default.md']
+                },
+                {
+                    text: '音游插件',
+                    // collapsible: true,
+                    children: [
+                        '/plugins/rhythmgame/Arcaea.md',
+                        '/plugins/rhythmgame/osu!.md',
+                        '/plugins/rhythmgame/maimaiDX.md'
+                    ]
+                },{
+                    text: '其他插件',
+                    // collapsible: true,
+                    children: [
+                        '/plugins/other/pcr.md',
+                        '/plugins/other/pcr_duel.md',
+                        '/plugins/other/genshen.md',
+                        '/plugins/other/setu.md',
+                        '/plugins/other/cdd.md',
+                        '/plugins/other/bandoristation.md',
+                        '/plugins/other/rss.md',
+                        '/plugins/other/minecraft.md',
+                        '/plugins/other/setuscore.md'
+                    ]
+                }
+            ],
+            '/API/': [
+                {
+                    text: 'API',
+                    children: [
+                        '/API/osu!.md',
+                        '/API/Arcaea.md'
+                    ]
+                }
+            ]
+        }
+    }),
+    plugins: [
+        searchPlugin({
+            locales: {
+                '/': {
+                    placeholder: '搜索'
+                }
+            },
+            maxSuggestions: 10
+        }),
+        backToTopPlugin()
+    ],
+    bundler: viteBundler({
+        viteOptions: {},
+        vuePluginOptions: {}
+    })
+}

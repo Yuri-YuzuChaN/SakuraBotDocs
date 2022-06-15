@@ -1,0 +1,51 @@
+:root {
+    --c-brand: #ffaab8;
+    --c-brand-light: #ffaab8;
+    --c-tip: var(--c-brand-light);
+    --c-tip-bg: #ffe9ec;
+    --c-tip-title: var(--c-brand-light);
+}
+
+a {
+    color: #42b983;
+}
+
+div.custom-container.tip {
+    color: #5d5d5d;
+}
+
+div.custom-container.tip a {
+    color: #42b983;
+}
+
+div.custom-container.warning a code {
+    color: #42b983;
+}
+
+.description {
+    --c-text: var(--c-brand);
+}
+
+h1#main-title {
+    color: var(--c-brand-light);
+}
+
+span.site-name.can-hide {
+    color: var(--c-brand-light);
+}
+
+#nprogress {
+    --nprogress-color: var(--c-brand);
+}
+
+.back-to-top {
+    --back-to-top-color-hover: var(--c-brand-light);
+}
+
+html.dark {
+    --c-brand: #ffc0cb;
+    --c-brand-light: #ffaab8;
+    --c-tip: var(--c-brand-light);
+    --c-tip-bg: #ffe9ec;
+    --c-tip-title: var(--c-brand-light);
+}
