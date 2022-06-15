@@ -80,7 +80,7 @@ module.exports = {
             },
             {
                 text: 'Github',
-                link: 'https://github.com/Yuri-YuzuChaN'
+                link: 'https://github.com/Yuri-YuzuChaN/SakuraBotDocs/'
             }
         ],
         sidebar: {
