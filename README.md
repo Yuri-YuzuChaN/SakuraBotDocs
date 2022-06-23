@@ -6,6 +6,10 @@
 
 <div align='center'>
 
-<font color='#ffaab8' size=6>Sakura Bot</font>
+<font color='#ffaab8' size=6>
+    <a herf='https://sakura.yuzuai.xyz/'>
+        Sakura Bot
+    </a>
+</font>
 
 </div>
