@@ -2,6 +2,10 @@
 
 osu ppv2 API使用说明
 
+::: waring 注意
+api站点未搭建，暂时无法使用
+:::
+
 ## API
 
 API提供 `GET` 和 `POST` 两种请求方法
