@@ -21,6 +21,7 @@ module.exports = {
     },
     theme: defaultTheme({
         logo: '/images/logo.png',
+        contributors: false,
         lastUpdated: true,
         lastUpdatedText: '上次更新',
         navbar: [
