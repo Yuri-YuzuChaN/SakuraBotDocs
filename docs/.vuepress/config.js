@@ -7,6 +7,11 @@ module.exports = {
     base: '/',
     host: '0.0.0.0',
     port: '5555',
+    head: [
+        [
+            'link', { rel: 'icon', href: '/images/logo.png' }
+        ]
+    ],
     locales: {
         '/': {
             lang: 'zh-CN',
