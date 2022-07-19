@@ -2,7 +2,7 @@
 
 osu ppv2 API使用说明
 
-::: waring 注意
+::: warning 注意
 api站点未搭建，暂时无法使用
 :::
 

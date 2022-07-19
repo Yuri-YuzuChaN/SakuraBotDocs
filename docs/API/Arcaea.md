@@ -2,7 +2,7 @@
 
 Arcaea API以及静态资源使用说明
 
-::: waring 注意
+::: warning 注意
 api站点未搭建，暂时无法使用
 :::
 ## API
