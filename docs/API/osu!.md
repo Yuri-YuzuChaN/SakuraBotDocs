@@ -211,11 +211,7 @@ API提供 `GET` 和 `POST` 两种请求方法
 |       StarRating       |  double  |         地图难度        |
 |           HP           |  double  |         地图 HP         |
 |           CS           |  double  |         地图 CS         |
-<<<<<<< HEAD
 |          Aim           |  double  |      地图 Aim 难度       |
-=======
-|         Speed          |  double  |      地图 Aim 难度       |
->>>>>>> def5e17faa21047669ebb20396553785b2abe216
 |         Speed          |  double  |      地图 Speed 难度    |
 |           AR           |  double  |         地图 AR         |
 |           OD           |  double  |         地图 OD         |
