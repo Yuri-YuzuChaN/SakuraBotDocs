@@ -2,10 +2,6 @@
 
 osu ppv2 API使用说明
 
-::: warning 注意
-api站点未搭建，暂时无法使用
-:::
-
 ## API
 
 API提供 `GET` 和 `POST` 两种请求方法
@@ -23,29 +19,35 @@ API提供 `GET` 和 `POST` 两种请求方法
 
    ```http
    POST https://api.yuzuai.xyz/osu
-   Content-Type: application/json
+   Content-Type: text/plate
    ```
 
    </CodeGroupItem>
 </CodeGroup>
 
+::: warning 注意
+目前仅支持 `GET` 请求
+:::
+
 ## 请求
 
 ***为必带参数**
 
-|  参数名   |     数据类型     | 默认值 |                            说明                            |
-| :-------: | :--------------: | :----: | :--------------------------------------------------------: |
-| ***mode** |       int        |        |       模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania       |
-| ***map**  |       int        |        |                           地图ID                           |
-| accuracy  |      float       |   0    |                           准确度                           |
-|   score   |       int        |   0    |                 游玩分数，仅用于mania模式                  |
-|   combo   |       int        |   0    |                           连击数                           |
-|   tick    |       int        |   0    |                       仅用于ctb模式                        |
-|   drop    |       int        |   0    |                       仅用于ctb模式                        |
-|   good    |       int        |   0    |                            100                             |
-|    bad    |       int        |   0    |                             50                             |
-|   miss    |       int        |   0    |                            miss                            |
-|   mods    | List[str] \| str |        |                          附带mods                          |
+|  参数名   |     数据类型       | 默认值 |                            说明                             |
+| :-------: | :--------------: | :----: | :--------------------------------------------------------:|
+| **BeatmapID** *|   int       |        |       模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania      |
+| **Mode** *  |       int       |        |                           地图ID                           |
+| Accuracy  |      double      |   0    |                       准确度 0-1                           |
+|   Combo   |       int        |   0    |                         连击数                             |
+|   C300    |       int        |   0    |                        Combo 300                           |
+|   C100    |       int        |   0    |                        Combo 100                          |
+|   C50     |       int        |   0    |                        Combo 50                           |
+|   Miss    |       int        |   0    |                           Miss                             |
+|   Geki    |       int        |   0    |                         Mania的黄 `300`                    |
+|   Katu    |       int        |   0    |           Catch的 `SmallTickMiss` / Mania的 `200`          |
+|   Mods    |     string       |        |                          附带mods                          |
+|   Score   |       int        |1000000 |                    Mania分数，暂时没有用处                  |
+|   isPlay  |      bool        |        |            是否为游玩成绩，如果为否则只计算地图信息           |
 
 ## 示例
 
@@ -57,19 +59,19 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http
-  GET https://api.yuzuai.xyz/osu?mode=0&map=2717460
+  GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=0
    ```
 
    </CodeGroupItem>
    <CodeGroupItem title='POST' active>
 
    ```http
-   POST https://106.53.138.218:6321/api/osu
-   Content-Type: application/json
+   POST https://api.yuzuai.xyz/osu
+   Content-Type: text/plate
    
    {
-   	mode: 0,
-   	map: 2717460
+   	BeatmapID: 2717460,
+   	Mode: 0
    }
    ```
 
@@ -82,7 +84,7 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?mode=0&map=2717460&accuracy=99.17&combo=1026&good=13&mods=HDDT
+   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=0&Accuracy=0.9917&Combo=1564&C300=1026&C100=13&Mods=HDDT&isPlay=true
    ```
 
    </CodeGroupItem>
@@ -90,15 +92,17 @@ API提供 `GET` 和 `POST` 两种请求方法
 
    ```http:no-line-numbers
    POST https://api.yuzuai.xyz/osu
-   Content-Type: application/json
+   Content-Type: text/plate
    
    {
-   	mode: 0,
-   	map: 2717460,
-   	accuracy: 99.17,
-   	combo: 1026,
-   	good: 13,
-   	mods: ["HD", "DT"]
+   	BeatmapID: 2717460,
+   	Mode: 0,
+   	Accuracy: 0.9917,
+      Combo: 1564
+   	C300: 1026,
+   	C100: 13,
+   	Mods: "HDDT",
+      isPlay: "true"
    }
    ```
 
@@ -113,7 +117,7 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?mode=1&map=2717460&accuracy=98.73&good=37&miss=0
+   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=1&Accuracy=0.9873&C100=37&Miss=0&isPlay=true
    ```
 
    </CodeGroupItem>
@@ -121,14 +125,15 @@ API提供 `GET` 和 `POST` 两种请求方法
 
    ```http:no-line-numbers
    POST https://api.yuzuai.xyz/osu
-   Content-Type: application/json
+   Content-Type: text/plate
    
    {
-   	mode: 1,
-   	map: 2717460,
-   	accuracy: 98.73,
-   	good: 37,
-   	miss: 0
+   	BeatmapID: 2717460,
+   	Mode: 1,
+   	Accuracy: 0.9873,
+   	C100: 37,
+   	Miss: 0,
+      isPlay: "true"
    }
    ```
 
@@ -143,7 +148,7 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?mode=12&map=2717460&accuracy=99.92&miss=1
+   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=2&Accuracy=0.9992&Miss=1&isPlay=true
    ```
 
    </CodeGroupItem>
@@ -151,13 +156,14 @@ API提供 `GET` 和 `POST` 两种请求方法
 
    ```http:no-line-numbers
    POST https://api.yuzuai.xyz/osu
-   Content-Type: application/json
+   Content-Type: text/plate
    
    {
-   	mode: 2,
-   	map: 2717460,
-   	accuracy: 99.92,
-   	miss: 1
+   	BeatmapID: 2717460,
+   	Mode: 2,
+   	Accuracy: 0.9992,
+   	Miss: 1,
+      isPlay: "true"
    }
    ```
    
@@ -172,7 +178,7 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?mode=3&map=2717460&score=903000
+   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=3&C300=1634&Geki=157&Katu=10&C100=1&C50=1&Score=992326&isPlay=true
    ```
 
    </CodeGroupItem>
@@ -180,12 +186,18 @@ API提供 `GET` 和 `POST` 两种请求方法
 
    ```http:no-line-numbers
    POST https://api.yuzuai.xyz/osu
-   Content-Type: application/json
+   Content-Type: text/plate
    
    {
-   	mode: 3,
-   	map: 2717460,
-   	score: 903000
+   	BeatmapID: 2717460,
+   	Mode: 3,
+      C300: 1634,
+      Geki: 157,
+      Katu: 10,
+      C100: 1,
+      C50: 1,
+   	Score: 992326,
+      isPlay: "true"
    }
    ```
 
@@ -194,48 +206,23 @@ API提供 `GET` 和 `POST` 两种请求方法
 
 ## 响应
 
-|   字段名   |  数据类型   |                   说明                    |
-| :--------: | :---------: | :---------------------------------------: |
-|  Beatmap   |     str     |                  地图名                   |
-| Statistics |  Dict[str]  |    详见下方[Statistics](#statistics)    |
-|    Aim     |    float    |                  Aim PP                   |
-|   Speed    |    float    |                 Speed PP                  |
-|  Accuracy  |    float    |                  Acc PP                   |
-| Flashlight |     int     |                暂不知用处                 |
-|     OD     |    float    |      地图OD值，会随着开启的Mods变化       |
-|     AR     |    float    |      地图AR值，会随着开启的Mods变化       |
-| Max Combo  |     int     |                最大Combo数                |
-|    Mods    |     str     |                开启的Mods                 |
-|     pp     |    float    |                 计算的PP                  |
-|   accpp    | List[float] |   计算acc 95-100的PP，仅计算 `std` 模式   |
-|    ifpp    |    float    |          计算如果游玩为FC的成绩           |
-|  mapinfo   |  Dict[str]  | 地图信息，详情见下方[mapinfo](#mapinfo) |
-
-### Statistics
-
-|    字段名     | 数据类型 |          说明          |
-| :-----------: | :------: | :--------------------: |
-|   Accuracy    |  float   |         准确度         |
-|     Combo     |   int    |         连击数         |
-|     Great     |   int    |          300           |
-|      Ok       |   int    |          100           |
-|      Meh      |   int    |           50           |
-|     Miss      |   int    |          miss          |
-| LargeTickHit  |   int    |     仅 `ctb` 模式      |
-| SmallTickHit  |   int    |     仅 `ctb` 模式      |
-| SmallTickMiss |   int    |     仅 `ctb` 模式      |
-|    Perfect    |   int    | 彩300，仅 `mania` 模式 |
-|     Good      |   int    |  200，仅 `mania` 模式  |
-
-### mapinfo
-
-|    字段名    | 数据类型 |           说明           |
-| :----------: | :------: | :----------------------: |
-| star_rating  |  float   |         地图难度         |
-|  aim_rating  |  float   |  aim难度，仅 `std` 模式  |
-| speed_rating |  float   | speed难度，仅 `std` 模式 |
-|  ar_rating   |  float   |  ar难度，仅 `std` 模式   |
-|  od_rating   |  float   |  od难度，仅 `std` 模式   |
+|   字段名                |  数据类型 |         说明          |
+| :-------------------:  | :------: | :--------------------:  |
+|       StarRating       |  double  |         地图难度        |
+|           HP           |  double  |         地图 HP         |
+|           CS           |  double  |         地图 CS         |
+|          Aim           |  double  |      地图 Aim 难度       |
+|         Speed          |  double  |      地图 Speed 难度    |
+|           AR           |  double  |         地图 AR         |
+|           OD           |  double  |         地图 OD         |
+|          aim           |  double  |         Aim PP          |
+|         speed          |  double  |        Speed PP         |
+|        accuracy        |  double  |         Acc PP          |
+|       flashlight       |  double  |                         |
+|  effective_miss_count  |  double  |                         |
+|           pp           |  double  |       计算游玩的PP       |
+|          sspp          |  double  |     计算该地图SS的PP      |
+|          ifpp          |  double  |  计算游玩的地图如果FC的PP |
 
 ## 示例
 
@@ -243,39 +230,20 @@ API提供 `GET` 和 `POST` 两种请求方法
 
 ```json
 {
-    "Beatmap":"Suzuyu - Euphorium (GodKei) [Koori's White Snow Extra]",
-    "Statistics":{
-        "Accuracy":100.0,
-        "Combo":1565.0,
-        "Great":1039.0,
-        "Ok":0.0,
-        "Meh":0.0,
-        "Miss":0.0
-    },
-    "Aim":389.0841220790005,
-    "Speed":284.86206231387206,
-    "Accuracy":199.5151216710896,
-    "Flashlight":0.0,
-    "OD":10.311111238267687,
-    "AR":10.53333346048991,
-    "Max Combo":1565.0,
-    "Mods":"DT, HD",
-    "pp":888.4478746833375,
-    "accpp":[
-        500.3719254955025,
-        536.8176616638145,
-        593.4861765312446,
-        658.8430713342487,
-        771.8632184144637,
-        888.4478746833375
-    ],
-    "ifpp":888.4478746833375,
-    "mapinfo":{
-        "star_rating":8.25,
-        "aim_rating":4.2,
-        "speed_rating":3.71,
-        "ar_rating":10.53,
-        "od_rating":10.31
-    }
+   "StarRating": 5.738587643332177,
+   "HP": 5.0,
+   "CS": 3.5999999046325684,
+   "Aim": 2.976119978852806,
+   "Speed": 2.502084429304671,
+   "AR": 9.300000190734863,
+   "OD": 8.800000190734863,
+   "aim": 117.62958934808009,
+   "speed": 68.54505269302295,
+   "accuracy": 69.36988825950219,
+   "flashlight": 0.0,
+   "effective_miss_count": 0.0,
+   "pp": 259.90454059224646,
+   "sspp": 293.8718595656594,
+   "ifpp": 260.02799911732274
 }
 ```
