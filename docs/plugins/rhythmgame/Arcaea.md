@@ -16,10 +16,10 @@
 - arcbind
 - arcun
 - arcre
-- arcinfo
-- arcsc
+- arcinfo/b30
+- arcsc/score
 - arcset
-- archart
+- archart/chart
 - arcrd
 
 ### 帮助
@@ -48,13 +48,13 @@
 
 #### 查询b30成绩
 
-- 查询自己b30成绩：`arcinfo`
+- 查询自己b30成绩：`arcinfo` 或 `b30`
 
-- 查询Ta人(好友码)b30成绩：`arcinfo arcid`
+- 查询Ta人(好友码)b30成绩：`arcinfo/b30 arcid`
 
-    - 例如：`arcinfo 114514810`
+    - 例如：`arcinfo 114514810` 或 `b30 114514810`
 
-- 查询Ta人(群成员)b30成绩：`arcinfo @柚子`
+- 查询Ta人(群成员)b30成绩：`arcinfo/b30 @柚子`
 
 ::: tip 提示
 金色边框为7天内的新成绩
@@ -64,13 +64,13 @@
 
 - 查询自己：`arcsc 曲名/别名 难度`
 
-    - 例如：`arcsc 白魔王 byd`
+    - 例如：`arcsc 白魔王 byd` 或 `score 白魔王 byd`
 
 - 查询Ta人(好友码)成绩：`arcsc arcid 曲名/别名 难度`
 
-    - 例如：`arcsc 114514810 白魔王 byd`
+    - 例如：`arcsc 114514810 白魔王 byd` 或 `score 114514810 白魔王 byd`
 
-- 查询Ta人(群成员)成绩：`arcsc @柚子 曲名/别名 难度`
+- 查询Ta人(群成员)成绩：`arcsc/score @柚子 曲名/别名 难度`
 
 ::: tip 提示
 难度可以识别三种格式，例如beyond难度：`3` | `beyond` | `byd`
@@ -90,9 +90,9 @@
 
 ### 查看谱面
 
-- 查询谱面：`archart 曲名/别名 难度`
+- 查询谱面：`archart/chart 曲名/别名 难度`
 
-    - 例如： `archart testity byd`
+    - 例如： `archart testity byd` 或 `chart testity byd`
 
 ::: tip 提示
 默认为 `FTR` 难度
