@@ -33,10 +33,10 @@ API提供 `GET` 和 `POST` 两种请求方法
 
 ***为必带参数**
 
-|  参数名   |     数据类型       | 默认值 |                            说明                             |
+|  参数名   |     数据类型       | 默认值 |                           说明                            |
 | :-------: | :--------------: | :----: | :--------------------------------------------------------:|
-| **BeatmapID** *|   int       |        |       模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania      |
-| **Mode** *  |       int       |        |                           地图ID                           |
+| **BeatmapID** *|   int       |        |                           地图ID                            |
+| **Mode** *  |       int      |        |      模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania      |
 | Accuracy  |      double      |   0    |                       准确度 0-1                           |
 |   Combo   |       int        |   0    |                         连击数                             |
 |   C300    |       int        |   0    |                        Combo 300                           |
@@ -46,7 +46,7 @@ API提供 `GET` 和 `POST` 两种请求方法
 |   Geki    |       int        |   0    |                         Mania的黄 `300`                    |
 |   Katu    |       int        |   0    |           Catch的 `SmallTickMiss` / Mania的 `200`          |
 |   Mods    |     string       |        |                          附带mods                          |
-|   Score   |       int        |1000000 |                    Mania分数，暂时没有用处                  |
+|   Score   |       int        | 1000000|                    Mania分数，暂时没有用处                  |
 |   isPlay  |      bool        |        |            是否为游玩成绩，如果为否则只计算地图信息           |
 
 ## 示例
