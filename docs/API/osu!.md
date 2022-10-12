@@ -11,15 +11,15 @@ API提供 `GET` 和 `POST` 两种请求方法
 
 
    ```http
-   GET https://api.yuzuai.xyz/osu
+   GET https://api.yuzuai.xyz/osu/ppcalc
    ```
 
    </CodeGroupItem>
    <CodeGroupItem title='POST' active>
 
    ```http
-   POST https://api.yuzuai.xyz/osu
-   Content-Type: text/plate
+   POST https://api.yuzuai.xyz/osu/ppcalc
+   Content-Type: application/json
    ```
 
    </CodeGroupItem>
@@ -59,15 +59,15 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http
-  GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=0
+  GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0
    ```
 
    </CodeGroupItem>
    <CodeGroupItem title='POST' active>
 
    ```http
-   POST https://api.yuzuai.xyz/osu
-   Content-Type: text/plate
+   POST https://api.yuzuai.xyz/osu/ppcalc
+   Content-Type: application/json
    
    {
    	BeatmapID: 2717460,
@@ -84,15 +84,15 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=0&Accuracy=0.9917&Combo=1564&C300=1026&C100=13&Mods=HDDT&isPlay=true
+   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0&Accuracy=0.9917&Combo=1564&C300=1026&C100=13&Mods=HDDT&isPlay=true
    ```
 
    </CodeGroupItem>
    <CodeGroupItem title='POST' active>
 
    ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu
-   Content-Type: text/plate
+   POST https://api.yuzuai.xyz/osu/ppcalc
+   Content-Type: application/json
    
    {
    	BeatmapID: 2717460,
@@ -117,15 +117,15 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=1&Accuracy=0.9873&C100=37&Miss=0&isPlay=true
+   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=1&Accuracy=0.9873&C100=37&Miss=0&isPlay=true
    ```
 
    </CodeGroupItem>
    <CodeGroupItem title='POST' active>
 
    ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu
-   Content-Type: text/plate
+   POST https://api.yuzuai.xyz/osu/ppcalc
+   Content-Type: application/json
    
    {
    	BeatmapID: 2717460,
@@ -148,15 +148,15 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=2&Accuracy=0.9992&Miss=1&isPlay=true
+   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=2&Accuracy=0.9992&Miss=1&isPlay=true
    ```
 
    </CodeGroupItem>
    <CodeGroupItem title='POST' active>
 
    ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu
-   Content-Type: text/plate
+   POST https://api.yuzuai.xyz/osu/ppcalc
+   Content-Type: application/json
    
    {
    	BeatmapID: 2717460,
@@ -178,15 +178,15 @@ API提供 `GET` 和 `POST` 两种请求方法
    <CodeGroupItem title='GET' active>
 
    ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu?BeatmapID=2717460&Mode=3&C300=1634&Geki=157&Katu=10&C100=1&C50=1&Score=992326&isPlay=true
+   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=3&C300=1634&Geki=157&Katu=10&C100=1&C50=1&Score=992326&isPlay=true
    ```
 
    </CodeGroupItem>
    <CodeGroupItem title='POST' active>
 
    ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu
-   Content-Type: text/plate
+   POST https://api.yuzuai.xyz/osu/ppcalc
+   Content-Type: application/json
    
    {
    	BeatmapID: 2717460,

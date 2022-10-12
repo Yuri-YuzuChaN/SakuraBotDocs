@@ -141,16 +141,6 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
 - `!getbg [mapid]`：提取地图BG
 
-## 查看图组信息
-
-- `!bmap [setid]`：查询图组信息
-
-- `!bmap -b [mapid]`：使用地图ID查询图组信息
-
-## 下载地图上传到群
-
-- `!osudl [setid]`：下载地图
-
 ## 下载地图上传到群
 
 - `!osudl [setid]`：下载地图
