@@ -4,50 +4,31 @@ osu ppv2 API使用说明
 
 ## API
 
-API提供 `GET` 和 `POST` 两种请求方法
+API提供 `GET` 请求方法
 
-<CodeGroup>
-   <CodeGroupItem title='GET' active>
-
-
-   ```http
-   GET https://api.yuzuai.xyz/osu/ppcalc
-   ```
-
-   </CodeGroupItem>
-   <CodeGroupItem title='POST' active>
-
-   ```http
-   POST https://api.yuzuai.xyz/osu/ppcalc
-   Content-Type: application/json
-   ```
-
-   </CodeGroupItem>
-</CodeGroup>
-
-::: warning 注意
-目前仅支持 `GET` 请求
-:::
+```http
+GET https://api.yuzuai.xyz/osu/ppcalc
+```
 
 ## 请求
 
 ***为必带参数**
 
 |  参数名   |     数据类型       | 默认值 |                           说明                            |
-| :-------: | :--------------: | :----: | :--------------------------------------------------------:|
-| **BeatmapID** *|   int       |        |                           地图ID                            |
-| **Mode** *  |       int      |        |      模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania      |
-| Accuracy  |      double      |   0    |                       准确度 0-1                           |
-|   Combo   |       int        |   0    |                         连击数                             |
-|   C300    |       int        |   0    |                        Combo 300                           |
-|   C100    |       int        |   0    |                        Combo 100                          |
-|   C50     |       int        |   0    |                        Combo 50                           |
-|   Miss    |       int        |   0    |                           Miss                             |
-|   Geki    |       int        |   0    |                         Mania的黄 `300`                    |
-|   Katu    |       int        |   0    |           Catch的 `SmallTickMiss` / Mania的 `200`          |
-|   Mods    |     string       |        |                          附带mods                          |
-|   Score   |       int        | 1000000|                    Mania分数，暂时没有用处                  |
-|   isPlay  |      bool        |        |            是否为游玩成绩，如果为否则只计算地图信息           |
+| :-------: | :--------------: | :-----: | :--------------------------------------------------------:|
+| **BeatmapID** *|   int       |         |                           地图ID                            |
+| **Mode** *  |       int      |         |      模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania      |
+| Accuracy  |      double      |    0    |                       准确度 0-1                           |
+|   Combo   |       int        |    0    |                         连击数                             |
+|   C300    |       int        |    0    |                        Combo 300                           |
+|   C100    |       int        |    0    |                        Combo 100                          |
+|   C50     |       int        |    0    |                        Combo 50                           |
+|   Miss    |       int        |    0    |                           Miss                             |
+|   Geki    |       int        |    0    |                         Mania的黄 `300`                    |
+|   Katu    |       int        |    0    |           Catch的 `SmallTickMiss` / Mania的 `200`          |
+|   Mods    |     string       |         |                          附带mods                          |
+|   Score   |       int        | 1000000 |                    Mania分数，暂时没有用处                  |
+|   isPlay  |      bool        |         |            是否为游玩成绩，如果为否则只计算地图信息           |
 
 ## 示例
 
@@ -55,154 +36,89 @@ API提供 `GET` 和 `POST` 两种请求方法
 
 - 计算地图ID：`2717460` 的 `std` 模式
 
-<CodeGroup>
-   <CodeGroupItem title='GET' active>
+```http
+GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0
+Content-Type: application/json
 
-   ```http
-  GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0
-   ```
-
-   </CodeGroupItem>
-   <CodeGroupItem title='POST' active>
-
-   ```http
-   POST https://api.yuzuai.xyz/osu/ppcalc
-   Content-Type: application/json
-   
-   {
-   	BeatmapID: 2717460,
-   	Mode: 0
-   }
-   ```
-
-   </CodeGroupItem>
-</CodeGroup>
+{
+   BeatmapID: 2717460,
+   Mode: 0
+}
+```
 
 - 计算游玩地图ID：`2717460` 的 `std` 模式的结果
 
-<CodeGroup>
-   <CodeGroupItem title='GET' active>
+```http:no-line-numbers
+GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0&Accuracy=0.9917&Combo=1564&C300=1026&C100=13&Mods=HDDT&isPlay=true
+Content-Type: application/json
 
-   ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0&Accuracy=0.9917&Combo=1564&C300=1026&C100=13&Mods=HDDT&isPlay=true
-   ```
-
-   </CodeGroupItem>
-   <CodeGroupItem title='POST' active>
-
-   ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu/ppcalc
-   Content-Type: application/json
-   
-   {
-   	BeatmapID: 2717460,
-   	Mode: 0,
-   	Accuracy: 0.9917,
-      Combo: 1564
-   	C300: 1026,
-   	C100: 13,
-   	Mods: "HDDT",
-      isPlay: "true"
-   }
-   ```
-
-   </CodeGroupItem>
-</CodeGroup>
+{
+   BeatmapID: 2717460,
+   Mode: 0,
+   Accuracy: 0.9917,
+   Combo: 1564
+   C300: 1026,
+   C100: 13,
+   Mods: "HDDT",
+   isPlay: "true"
+}
+```
 
 ### Taiko
 
 - 计算游玩地图ID：`2717460` 的 `taiko` 模式
 
-<CodeGroup>
-   <CodeGroupItem title='GET' active>
+```http:no-line-numbers
+GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=1&Accuracy=0.9873&C100=37&Miss=0&isPlay=true
+Content-Type: application/json
 
-   ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=1&Accuracy=0.9873&C100=37&Miss=0&isPlay=true
-   ```
-
-   </CodeGroupItem>
-   <CodeGroupItem title='POST' active>
-
-   ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu/ppcalc
-   Content-Type: application/json
-   
-   {
-   	BeatmapID: 2717460,
-   	Mode: 1,
-   	Accuracy: 0.9873,
-   	C100: 37,
-   	Miss: 0,
-      isPlay: "true"
-   }
-   ```
-
-   </CodeGroupItem>
-</CodeGroup>
+{
+   BeatmapID: 2717460,
+   Mode: 1,
+   Accuracy: 0.9873,
+   C100: 37,
+   Miss: 0,
+   isPlay: "true"
+}
+```
 
 ### Ctb
 
 - 计算游玩地图ID：`2717460` 的 `ctb` 模式
 
-<CodeGroup>
-   <CodeGroupItem title='GET' active>
+```http:no-line-numbers
+GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=2&Accuracy=0.9992&Miss=1&isPlay=true
+Content-Type: application/json
 
-   ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=2&Accuracy=0.9992&Miss=1&isPlay=true
-   ```
-
-   </CodeGroupItem>
-   <CodeGroupItem title='POST' active>
-
-   ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu/ppcalc
-   Content-Type: application/json
-   
-   {
-   	BeatmapID: 2717460,
-   	Mode: 2,
-   	Accuracy: 0.9992,
-   	Miss: 1,
-      isPlay: "true"
-   }
-   ```
-   
-   </CodeGroupItem>
-</CodeGroup>
+{
+   BeatmapID: 2717460,
+   Mode: 2,
+   Accuracy: 0.9992,
+   Miss: 1,
+   isPlay: "true"
+}
+```
 
 ### Mania
 
 - 计算游玩地图ID：`2717460` 的 `mania` 模式
 
-<CodeGroup>
-   <CodeGroupItem title='GET' active>
+```http:no-line-numbers
+GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=3&C300=1634&Geki=157&Katu=10&C100=1&C50=1&Score=992326&isPlay=true
+Content-Type: application/json
 
-   ```http:no-line-numbers
-   GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=3&C300=1634&Geki=157&Katu=10&C100=1&C50=1&Score=992326&isPlay=true
-   ```
-
-   </CodeGroupItem>
-   <CodeGroupItem title='POST' active>
-
-   ```http:no-line-numbers
-   POST https://api.yuzuai.xyz/osu/ppcalc
-   Content-Type: application/json
-   
-   {
-   	BeatmapID: 2717460,
-   	Mode: 3,
-      C300: 1634,
-      Geki: 157,
-      Katu: 10,
-      C100: 1,
-      C50: 1,
-   	Score: 992326,
-      isPlay: "true"
-   }
-   ```
-
-   </CodeGroupItem>
-</CodeGroup>
+{
+   BeatmapID: 2717460,
+   Mode: 3,
+   C300: 1634,
+   Geki: 157,
+   Katu: 10,
+   C100: 1,
+   C50: 1,
+   Score: 992326,
+   isPlay: "true"
+}
+```
 
 ## 响应
 

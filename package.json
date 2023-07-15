@@ -1,6 +1,6 @@
 {
   "name": "sakurabot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "author": "Yuri-YuzuChaN <806235364@qq.com>",
   "license": "MIT",
@@ -9,7 +9,8 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "@vuepress/plugin-search": "^2.0.0-beta.45",
-    "vuepress": "^2.0.0-beta.45"
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.66",
+    "@vuepress/plugin-search": "^2.0.0-beta.66",
+    "vuepress": "^2.0.0-beta.66"
   }
 }

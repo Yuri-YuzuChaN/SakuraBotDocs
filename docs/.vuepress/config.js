@@ -1,9 +1,9 @@
-const { defaultTheme } = require('@vuepress/theme-default')
-const { searchPlugin } = require('@vuepress/plugin-search')
-const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
-const { viteBundler } = require('vuepress')
+import { defaultTheme } from '@vuepress/theme-default'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { viteBundler } from 'vuepress'
 
-module.exports = {
+export default{
     base: '/',
     host: '0.0.0.0',
     port: '5555',
@@ -20,6 +20,7 @@ module.exports = {
         }
     },
     theme: defaultTheme({
+        colorMode: 'auto',
         logo: '/images/logo.png',
         contributors: false,
         lastUpdated: true,
@@ -41,7 +42,8 @@ module.exports = {
                         children: [
                             '/plugins/rhythmgame/Arcaea.md',
                             '/plugins/rhythmgame/osu!.md',
-                            '/plugins/rhythmgame/maimaiDX.md'
+                            '/plugins/rhythmgame/maimaiDX.md',
+                            '/plugins/rhythmgame/chunithm.md'
                         ]
                     },
                     {
@@ -65,7 +67,8 @@ module.exports = {
                 children: [
                     '/plugins/rhythmgame/Arcaea/',
                     '/plugins/rhythmgame/osu!/',
-                    '/plugins/rhythmgame/maimaiDX/'
+                    '/plugins/rhythmgame/maimaiDX/',
+                    '/plugins/rhythmgame/chunithm/'
                 ]
             },
             {
@@ -107,9 +110,11 @@ module.exports = {
                     children: [
                         '/plugins/rhythmgame/Arcaea.md',
                         '/plugins/rhythmgame/osu!.md',
-                        '/plugins/rhythmgame/maimaiDX.md'
+                        '/plugins/rhythmgame/maimaiDX.md',
+                        '/plugins/rhythmgame/chunithm.md'
                     ]
-                },{
+                },
+                {
                     text: '其他插件',
                     // collapsible: true,
                     children: [
@@ -148,7 +153,12 @@ module.exports = {
         backToTopPlugin()
     ],
     bundler: viteBundler({
-        viteOptions: {},
-        vuePluginOptions: {}
+        vuePluginOptions: {
+            template: {
+                compilerOptions: {
+                  isCustomElement: (tag) => tag === 'center',
+                },
+            }
+        }
     })
 }

@@ -1,20 +1,14 @@
 # Bot
 
-Sakura Bot（原YuzuBot）运行至今已经过去一年七个月，并未进行完全公开使用，从2022年6月15日起，Sakura Bot将正式开放邀请
+Sakura Bot，一个多功能的QQBot（其实更专注于音游插件
 
 ::: tip 提示
 Sakura 不支持也不允许私聊指令
 :::
 
-## 如何使用
+## 需要使用
 
-~~只需邀请进入需要使用Sakura的群组~~
-
-因两天内被冻结两次后慎重考虑，不再允许直接邀请Bot入群，如需使用请添加Bot管理员QQ或加入[Bot群组](https://jq.qq.com/?_wv=1027&k=321QMhqK)申请
-
-::: tip 提示
-~~可直接邀请无需添加Sakura为好友~~
-:::
+邀请使用请添加Bot管理员QQ或加入[Bot群组](https://jq.qq.com/?_wv=1027&k=321QMhqK)进行申请
 
 ## 查看服务(插件)列表
 
