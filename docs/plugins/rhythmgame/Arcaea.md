@@ -2,6 +2,10 @@
 
 移动端音游 `Arcaea` 查询插件，项目地址 [Github](https://github.com/Yuri-YuzuChaN/Arcaea-BAA)
 
+::: warning 注意
+API跑路，该插件已下架
+:::
+
 ::: tip 提示
 该插件为自制插件，遇到问题可及时[反馈](/start/#bot出问题了怎么办)
 :::
