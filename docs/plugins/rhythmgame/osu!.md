@@ -3,12 +3,12 @@
 PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务器，项目地址 [Github](https://github.com/Yuri-YuzuChaN/osuv2)
 
 ::: tip 提示
-此插件为自制插件，遇到问题可及时[反馈](/start/#bot出问题了怎么办？)，或者前往Github提[issues](https://github.com/Yuri-YuzuChaN/osuv2/issues)
+此插件为自制插件，遇到问题可及时[反馈](/start/sakura#bot出问题了怎么办)，或者前往Github提[issues](https://github.com/Yuri-YuzuChaN/osuv2/issues)
 :::
 
 ## 开启/关闭
 
-- 开启/关闭指令为：`!插件 osu on` | `!插件 osu off`
+- 开启/关闭指令为：`开启插件 osu` | `关闭插件 osu`
 
 ::: warning 注意
 此插件搭建在次框架并且默认开启，开启/关闭指令不同于其它插件
@@ -29,21 +29,21 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
 ## 绑定和解绑
 
-- `!bind [name | @]`：绑定用户
+- 绑定用户：`!bind [用户名 / @]`
 
-- `!unbind`：解除绑定
+- 解除绑定：`!unbind`
 
 ## 查询信息
 
-- `!info`：查询自己默认模式的信息
+- 查询自己的信息：`!info`
 
-- `!info [:mode]`：查询其它模式
+- 查询其它模式：`!info :[mode]`
 
     - 例如：`!info :3`
 
-- `!info [name | @]`：查询Ta人信息
+- 查询Ta人信息：`!info [用户名 / @]`
 
-- `!info [name | @] [:mode]`：查询Ta人其它模式信息
+- 查询Ta人其它模式信息：`!info [用户名 / @] :[mode]`
 
     - 例如：`!info Aihara Yuzu :3` 或 `!info@柚子 :1`
 
@@ -53,9 +53,9 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
 - `!pr [:mode]`：查询其它模式
 
-- `!pr [name | @]`：查询Ta人最近游玩
+- `!pr [用户名 / @]`：查询Ta人最近游玩
 
-- `!pr [name | @] [:mode]`：查询Ta人其它模式最近游玩
+- `!pr [用户名 / @] [:mode]`：查询Ta人其它模式最近游玩
 
 ## 查询最近成绩
 
@@ -63,9 +63,9 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
 - `!re [:mode]`：查询其它模式
 
-- `!re [name | @]`：查询Ta人最近游玩
+- `!re [用户名 / @]`：查询Ta人最近游玩
 
-- `!re [name | @] [:mode]`：查询Ta人其它模式最近游玩
+- `!re [用户名 / @] [:mode]`：查询Ta人其它模式最近游玩
 
 ## 查询地图成绩
 
@@ -81,13 +81,13 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
     - 例如：`!score 1154292 :3 +DTHD`
 
-- `!score [name | @] [mapid]`：查询Ta人地图成绩
+- `!score [用户名 / @] [mapid]`：查询Ta人地图成绩
 
-- `!score [name | @] [mapid] [+mods]`：查询Ta人地图附加 `mods` 的成绩
+- `!score [用户名 / @] [mapid] [+mods]`：查询Ta人地图附加 `mods` 的成绩
 
-- `!score [name | @] [mapid] [:mode]`：查询Ta人地图其它模式成绩
+- `!score [用户名 / @] [mapid] [:mode]`：查询Ta人地图其它模式成绩
 
-- `!score [name | @] [mapid] [:mode] [+mods]`：查询Ta人地图其它模式加mods的成绩
+- `!score [用户名 / @] [mapid] [:mode] [+mods]`：查询Ta人地图其它模式加mods的成绩
 
     - 例如：`!score Aihara Yuzu 1154292 :3 +DTHD`  或 `!info@柚子 1154292 :3 +DTHD`
 
@@ -135,21 +135,21 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
 - `!tbp`：查询当天新增bp
 
-- `!tbp [name | @]`：查询Ta人当天新增bp
+- `!tbp [用户名 | @]`：查询Ta人当天新增bp
 
 - `!tbp [:mode]`：查询其它模式新增bp
 
-- `!tbp [name | @] [:mode]`：查询Ta人其它模式新增bp
+- `!tbp [用户名 | @] [:mode]`：查询Ta人其它模式新增bp
 
 ## 查询当天游玩谱面
 
 - `!tr`：查询当天游玩
 
-- `!tr [name | @]`：查询Ta人当天游玩
+- `!tr [用户名 | @]`：查询Ta人当天游玩
 
 - `!tr [:mode]`：查询其它模式游玩
 
-- `!tr [name | @] [:mode]`：查询Ta人其它模式游玩
+- `!tr [用户名 | @] [:mode]`：查询Ta人其它模式游玩
 
 ## 查看地图信息
 
@@ -167,4 +167,4 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
 ## API
 
-提供PP计算[API](/API/osu!.md)
+提供PP计算[API](/api/osu!.md)

@@ -4,10 +4,10 @@ osu ppv2 API使用说明
 
 ## API
 
-API提供 `GET` 请求方法
+API提供 `POST` 请求方法
 
 ```http
-GET https://api.yuzuai.xyz/osu/ppcalc
+POST https://api.yuzuchan.moe/osu/ppcalc
 ```
 
 ## 请求
@@ -15,20 +15,25 @@ GET https://api.yuzuai.xyz/osu/ppcalc
 ***为必带参数**
 
 |  参数名   |     数据类型       | 默认值 |                           说明                            |
-| :-------: | :--------------: | :-----: | :--------------------------------------------------------:|
-| **BeatmapID** *|   int       |         |                           地图ID                            |
-| **Mode** *  |       int      |         |      模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania      |
-| Accuracy  |      double      |    0    |                       准确度 0-1                           |
-|   Combo   |       int        |    0    |                         连击数                             |
-|   C300    |       int        |    0    |                        Combo 300                           |
-|   C100    |       int        |    0    |                        Combo 100                          |
-|   C50     |       int        |    0    |                        Combo 50                           |
-|   Miss    |       int        |    0    |                           Miss                             |
-|   Geki    |       int        |    0    |                         Mania的黄 `300`                    |
-|   Katu    |       int        |    0    |           Catch的 `SmallTickMiss` / Mania的 `200`          |
-|   Mods    |     string       |         |                          附带mods                          |
-|   Score   |       int        | 1000000 |                    Mania分数，暂时没有用处                  |
-|   isPlay  |      bool        |         |            是否为游玩成绩，如果为否则只计算地图信息           |
+| :-------: | :--------------: | :------: | :--------------------------------------------------------:|
+| **beatmap** *|   int       |          |                           地图ID                            |
+| **mode** *  |       int      |          |      模式，`0`：std，`1`：taiko，`2`：ctb，`3`：mania      |
+|  score    |       dict       |          |               精确数据，详见 `score`                      |
+|  isplay   |       bool       |          |            是否为游玩成绩，如果为否则只计算地图信息         |
+
+### score
+
+|   参数名   |     数据类型      |  默认值  |                           说明                             |
+| :--------: | :--------------: | :------: | :--------------------------------------------------------:|
+|  accuracy  |      double      |   null   |                       准确度 0-100                         |
+|  combo     |       int        |   null   |                         连击数                             |
+|  n300      |       int        |   null   |                        combo 300                           |
+|  n100      |       int        |   null   |                        combo 100                          |
+|  n50       |       int        |   null   |                        combo 50                           |
+|  misses    |       int        |   null   |                           miss                             |
+|  n_geki    |       int        |   null   |                         mania的黄 `300`                    |
+|  n_katu    |       int        |   null   |           catch的 `SmallTickMiss` / mania的 `200`          |
+|  mods      |      string      |   null   |                   附带mods，如 `DTHD`                      |
 
 ## 示例
 
@@ -37,30 +42,32 @@ GET https://api.yuzuai.xyz/osu/ppcalc
 - 计算地图ID：`2717460` 的 `std` 模式
 
 ```http
-GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0
+POST https://api.yuzuchan.moe/osu/ppcalc
 Content-Type: application/json
 
 {
-   BeatmapID: 2717460,
-   Mode: 0
+   "beatmap": 2717460,
+   "mode": 0
 }
 ```
 
 - 计算游玩地图ID：`2717460` 的 `std` 模式的结果
 
 ```http:no-line-numbers
-GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=0&Accuracy=0.9917&Combo=1564&C300=1026&C100=13&Mods=HDDT&isPlay=true
+POST https://api.yuzuchan.moe/osu/ppcalc
 Content-Type: application/json
 
 {
-   BeatmapID: 2717460,
-   Mode: 0,
-   Accuracy: 0.9917,
-   Combo: 1564
-   C300: 1026,
-   C100: 13,
-   Mods: "HDDT",
-   isPlay: "true"
+   "beatmap": 2717460,
+   "mode": 0,
+   "score": {
+      "accuracy": 99.17,
+      "combo": 1564
+      "n300": 1026,
+      "n100": 13,
+      "mods": "HDDT",
+   },
+   "isplay": true
 }
 ```
 
@@ -69,16 +76,18 @@ Content-Type: application/json
 - 计算游玩地图ID：`2717460` 的 `taiko` 模式
 
 ```http:no-line-numbers
-GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=1&Accuracy=0.9873&C100=37&Miss=0&isPlay=true
+POST https://api.yuzuchan.moe/osu/ppcalc
 Content-Type: application/json
 
 {
-   BeatmapID: 2717460,
-   Mode: 1,
-   Accuracy: 0.9873,
-   C100: 37,
-   Miss: 0,
-   isPlay: "true"
+   "beatmap": 2717460,
+   "mode": 1,
+   "score": {
+      "accuracy": 98.73,
+      "n100": 37,
+      "misses": 0,
+   },
+   "isplay": true
 }
 ```
 
@@ -87,15 +96,17 @@ Content-Type: application/json
 - 计算游玩地图ID：`2717460` 的 `ctb` 模式
 
 ```http:no-line-numbers
-GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=2&Accuracy=0.9992&Miss=1&isPlay=true
+POST https://api.yuzuchan.moe/osu/ppcalc
 Content-Type: application/json
 
 {
-   BeatmapID: 2717460,
-   Mode: 2,
-   Accuracy: 0.9992,
-   Miss: 1,
-   isPlay: "true"
+   "beatmap": 2717460,
+   "mode": 2,
+   "score": {
+      "accuracy": 99.92,
+      "misses": 1,
+   },
+   "isplay": true
 }
 ```
 
@@ -104,19 +115,20 @@ Content-Type: application/json
 - 计算游玩地图ID：`2717460` 的 `mania` 模式
 
 ```http:no-line-numbers
-GET https://api.yuzuai.xyz/osu/ppcalc?BeatmapID=2717460&Mode=3&C300=1634&Geki=157&Katu=10&C100=1&C50=1&Score=992326&isPlay=true
+POST https://api.yuzuchan.moe/osu/ppcalc
 Content-Type: application/json
 
 {
-   BeatmapID: 2717460,
-   Mode: 3,
-   C300: 1634,
-   Geki: 157,
-   Katu: 10,
-   C100: 1,
-   C50: 1,
-   Score: 992326,
-   isPlay: "true"
+   "beatmap": 2717460,
+   "mode": 3,
+   "score": {
+      "n300": 1634,
+      "n_geki": 157,
+      "n_katu": 10,
+      "n100": 1,
+      "n50": 1,
+   },
+   "isplay": true
 }
 ```
 
@@ -124,7 +136,7 @@ Content-Type: application/json
 
 |   字段名                |  数据类型 |         说明          |
 | :-------------------:  | :------: | :--------------------:  |
-|       StarRating       |  double  |         地图难度        |
+|       StarRating       |  double  |        地图难度         |
 |           HP           |  double  |         地图 HP         |
 |           CS           |  double  |         地图 CS         |
 |          Aim           |  double  |      地图 Aim 难度       |

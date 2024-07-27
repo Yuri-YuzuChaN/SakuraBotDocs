@@ -3,11 +3,11 @@
 移动端音游 `Arcaea` 查询插件，项目地址 [Github](https://github.com/Yuri-YuzuChaN/Arcaea-BAA)
 
 ::: warning 注意
-API跑路，该插件已下架
+该插件已下架
 :::
 
 ::: tip 提示
-该插件为自制插件，遇到问题可及时[反馈](/start/#bot出问题了怎么办)
+该插件为自制插件，遇到问题可及时[反馈](/start/sakura#bot出问题了怎么办)
 :::
 
 ## 开启/关闭
@@ -76,10 +76,6 @@ API跑路，该插件已下架
 
     - 例如：`arcset 2` | `/a set 2`
 
-    - 样式 `1`：![re1](/images/re1.png)
-
-    - 样式 `2`：![re2](/images/re2.png)
-
 ### 查看曲目信息
 
 #### 谱面
@@ -105,7 +101,3 @@ API跑路，该插件已下架
 - 查询别名：`/a alias 曲目/别名`
 
     - 例如：`/a alias 骨折光`
-
-## API
-
-提供静态资源站和曲目信息[API](/API/Arcaea.md)

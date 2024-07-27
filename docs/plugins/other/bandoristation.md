@@ -1,4 +1,4 @@
-# bandori车站
+# Bandori车站
 
 音游 `BanG Dream` 车站插件
 

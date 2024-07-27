@@ -3,11 +3,11 @@
 懂得都懂，项目地址 [Github](https://github.com/Yuri-YuzuChaN/setu)
 
 ::: warning 注意
-由于bot风控率较高，该插件已下架
+该插件已下架
 :::
 
 ::: tip 提示
-该插件为自制插件，遇到问题可及时[反馈](/start/#bot出问题了怎么办)，或者前往Github提[issues](https://github.com/Yuri-YuzuChaN/setu/issues)
+该插件为自制插件，遇到问题可及时[反馈](/start/sakura#bot出问题了怎么办)，或者前往Github提[issues](https://github.com/Yuri-YuzuChaN/setu/issues)
 :::
 
 ## 默认模块
