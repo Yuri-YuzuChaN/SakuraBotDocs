@@ -133,7 +133,7 @@ GET https://api.yuzuchan.moe/maimaidx/getsongs
 
 与[获取所有别名](/api/maimaiDX#响应)一致
 
-## 查询别名一致的曲目
+## 查询指定曲目的所有别名
 
 ```http
 GET https://api.yuzuchan.moe/maimaidx/getsongsalias
@@ -149,7 +149,7 @@ GET https://api.yuzuchan.moe/maimaidx/getsongsalias
 #### 响应
 
 |   字段                 |         数据类型           |         说明          |
-| :-------------------:  | :-----------------------: | :--------------------:  |
+| :-------------------:  | :-----------------------: | :--------------------: |
 |   status               |          `int`            |         状态码         |
 |   content              |         `Alias`           |       所有别名         |
 
