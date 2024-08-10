@@ -27,7 +27,28 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/Yuri-YuzuChaN/SakuraBotDocs' }
     ],
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          }
+        }
+      }
     },
     footer: {
       message: '基于 VitePress 生成 | MIT 许可发布',
@@ -48,7 +69,12 @@ export default defineConfig({
       }
     },
     nav: nav(),
-    sidebar: sidebar()
+    sidebar: sidebar(),
+    darkModeSwitchLabel: '切换主题',
+    sidebarMenuLabel: '插件菜单',
+    returnToTopLabel: '返回顶部',
+    lightModeSwitchTitle: '切换浅色模式',
+    darkModeSwitchTitle: '切换深色模式'
   }
 })
 

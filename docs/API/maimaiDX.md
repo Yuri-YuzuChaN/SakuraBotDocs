@@ -146,6 +146,10 @@ GET https://api.yuzuchan.moe/maimaidx/getsongsalias
 |    name                |          `str`            |         曲名           |
 |    song_id             |          `int`            |        曲目ID          |
 
+::: tip 提示
+参数二选一，当填入两个参数时，将优先查询 `song_id` 对应曲目ID的所有别名
+:::
+
 #### 响应
 
 |   字段                 |         数据类型           |         说明          |
