@@ -162,4 +162,4 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 
 ## API
 
-提供PP计算[API](/API/osu!.md)
+提供PP计算[API](/api/osu!.md)
