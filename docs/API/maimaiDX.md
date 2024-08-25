@@ -111,7 +111,7 @@ GET https://api.yuzuchan.moe/maimaidx/getaliasend
 
 ### 响应
 
-与[获取投票状态](/api/maimaiDX#响应-1)一致
+与[获取投票状态](/API/maimaiDX#响应-1)一致
 
 ## 获取别名曲目
 
@@ -129,7 +129,7 @@ GET https://api.yuzuchan.moe/maimaidx/getsongs
 
 #### 响应
 
-与[获取所有别名](/api/maimaiDX#响应)一致
+与[获取所有别名](/API/maimaiDX#响应)一致
 
 ## 查询指定曲目的所有别名
 

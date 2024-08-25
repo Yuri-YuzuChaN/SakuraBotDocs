@@ -29,7 +29,7 @@ Sakura 暂不支持也不允许**私聊**
 ### 主框架
 
 ::: warning 注意
-该框架插件将逐步迁移至基于 [nonebot2](https://nonebot.dev/) 的[新框架](#新框架)
+该框架插件将逐步迁移至基于 [nonebot2](https://nonebot.dev/) 的[新框架](/start/sakura#新框架)
 :::
 
 - 开启指令：`开启 / 启用 / 打开 插件名称`
