@@ -25,15 +25,15 @@ GET https://api.yuzuchan.moe/maimaidx/maimaidxalias
 
 |   字段                 |         数据类型           |         说明          |
 | :-------------------:  | :-----------------------: | :--------------------: |
-|   SongID               |          `int`             |         曲目ID         |
-|   Name                 |          `str`             |          曲名          |
-|   Alias                |        `List[str]`          |        别名列表         |
+|   SongID               |          `int`            |         曲目ID         |
+|   Name                 |          `str`            |          曲名          |
+|   Alias                |        `List[str]`        |        别名列表         |
 
 ### 示例
 
 ```json
 {
-    "status": 200,
+    "status_code": 200,
     "content" [
         {
             "SongID": 8,
@@ -49,7 +49,6 @@ GET https://api.yuzuchan.moe/maimaidx/maimaidxalias
                 "真的爱情歌"
             ]
         },
-        ...
     ]
 }
 ```
@@ -98,7 +97,6 @@ GET https://api.yuzuchan.moe/maimaidx/getaliasstatus
             "AgreeVotes": 2,
             "Votes": 5
         },
-        ...
     ]
 }
 ```

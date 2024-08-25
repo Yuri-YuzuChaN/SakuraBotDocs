@@ -179,7 +179,7 @@ function sidebar(): DefaultTheme.Sidebar {
           { text: 'Bandori车站', link: '/bandoristation' },
           { text: 'CDD', link: '/cdd' },
           { text: '原神日历', link: '/genshin' },
-          { text: 'Minecraft', link: '/minecraft' },
+          { text: '※ Minecraft', link: '/minecraft' },
           { text: '贵族决斗', link: '/pcr_duel' },
           { text: 'RSS订阅服务', link: '/rss' },
           { text: '涩图', link: '/setu' },
@@ -237,8 +237,8 @@ function pcrPlugins(): DefaultTheme.SidebarItem[] {
 function rhythmGame(): DefaultTheme.NavItemWithLink[] {
   return [
     { text: 'maimaiDX', link: '/plugins/rhythmgame/maimaiDX' },
-    { text: 'osu!', link: '/plugins/rhythmgame/osu!' },
+    { text: '※ osu!', link: '/plugins/rhythmgame/osu!' },
     { text: 'Arcaea', link: '/plugins/rhythmgame/Arcaea' },
-    { text: 'chunithm', link: '/plugins/rhythmgame/chunithm' }
+    { text: '※ chunithm', link: '/plugins/rhythmgame/chunithm' }
   ]
 }

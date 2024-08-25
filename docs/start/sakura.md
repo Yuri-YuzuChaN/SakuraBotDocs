@@ -22,6 +22,16 @@ Sakura 暂不支持也不允许**私聊**
 
 ## 开启/关闭插件
 
+::: warning 注意
+仅允许管理员和群主使用该指令
+:::
+
+### 主框架
+
+::: warning 注意
+该框架插件将逐步迁移至基于 [nonebot2](https://nonebot.dev/) 的[新框架](#新框架)
+:::
+
 - 开启指令：`开启 / 启用 / 打开 插件名称`
 
   例如：
@@ -33,11 +43,27 @@ Sakura 暂不支持也不允许**私聊**
   例如：
     - `关闭 消息生成器`
 
-::: warning 注意
-[`osu`](/plugins/rhythmgame/osu!.md) 插件无法使用该指令
+### 新框架
 
-仅允许管理员和群主使用该指令
+::: tip 提示
+插件列表中带有 `※` 符号的插件均为新框架的插件
 :::
+
+- 开启指令：`开启插件 插件名称`
+
+  例如：
+    - `开启插件 osu`
+
+- 关闭指令：`关闭插件 插件名称`
+
+  例如：
+    - `关闭插件 chunithm`
+
+#### 新框架下的插件
+
+- [osu](/plugins/rhythmgame/osu!.md)
+- [chunithm](/plugins/rhythmgame/chunithm.md)
+- [minecraft](/plugins/other/minecraft.md)
 
 ## 插件没有反应
 

@@ -6,14 +6,9 @@ PC端音游 `osu` 查询插件，不支持查询 `lazer` 端以及私人服务�
 此插件为自制插件，遇到问题可及时[反馈](/start/sakura#bot出问题了怎么办)，或者前往Github提[issues](https://github.com/Yuri-YuzuChaN/osuv2/issues)
 :::
 
-## 开启/关闭
-
-- 开启/关闭指令为：`开启插件 osu` | `关闭插件 osu`
-
 ::: warning 注意
-此插件搭建在次框架并且默认开启，开启/关闭指令不同于其它插件
+该插件已迁移至新框架，请使用 `开启插件 osu` 指令启用插件
 :::
-
 
 ## 指令
 
