@@ -64,6 +64,8 @@ Sakura 暂不支持也不允许**私聊**
 - [osu](/plugins/rhythmgame/osu!.md)
 - [chunithm](/plugins/rhythmgame/chunithm.md)
 - [minecraft](/plugins/other/minecraft.md)
+- [以图搜图](/plugins/basic/search-pic.md)
+- [以图搜番](/plugins/basic/search-anime.md)
 
 ## 插件没有反应
 
